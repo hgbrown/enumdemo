@@ -10,11 +10,11 @@ import util.LowerCaseList;
  * @version 0.1201411250559
  * @since 0.1201411250559
  */
-public enum Gender implements EnumeratedTypeWithAlternateNames<Gender> {
+public enum Ethnicity implements EnumeratedTypeWithAlternateNames<Ethnicity> {
 
-    MALE("m", "1", "man"),
+    WHITE("w", "900", "wh"),
 
-    FEMALE("f", "2", "woman"),
+    BLACK("b", "500", "bl"),
 
     ;
 
@@ -23,15 +23,7 @@ public enum Gender implements EnumeratedTypeWithAlternateNames<Gender> {
      */
     private final LowerCaseList alternateNames;
 
-    /**
-     * Construct an enum constant with a collection of alternate names by which it could be found.
-     *
-     * @param names     alternate names by which this enumeration constant can be found. This should be a
-     *                  non-{@code null} collection of lowercase names.
-     * @throws java.lang.NullPointerException
-     *                  if {@code names} is {@code null}.
-     */
-    Gender(final String... names) {
+    Ethnicity(final String... names) {
         alternateNames = new LowerCaseList(names);
         alternateNames.add(name());
     }
@@ -42,7 +34,7 @@ public enum Gender implements EnumeratedTypeWithAlternateNames<Gender> {
     }
 
     @Override
-    public Gender[] getEnumeratedTypes() {
+    public Ethnicity[] getEnumeratedTypes() {
         return values();
     }
 
@@ -51,15 +43,15 @@ public enum Gender implements EnumeratedTypeWithAlternateNames<Gender> {
      * {@link #alternateNames one of its alternate names} matches the specified name.
      * The match of the name is case insensitive but extraneous whitespace characters are not permitted.
      *
-     * @param name      the case-insensitive name of the enum constant to be found.
-     * @return          the enum constant with the name specified.
+     * @param name          the case-insensitive name of the enum constant to be found.
+     * @return              the enum constant with the name specified.
      * @throws NullPointerException
-     *                  if {@code name} is {@code null}.
+     *                      if {@code name} is {@code null}.
      * @throws IllegalArgumentException
-     *                  if no enum constant can be found that matches the specified {code name}.
+     *                      if no enum constant can be found that matches the specified {code name}.
      */
-    public static Gender getByName(String name) {
-        return EnumeratedTypeUtil.getByName(name, Gender.FEMALE);
+    public static Ethnicity getByName(String name) {
+        return EnumeratedTypeUtil.getByName(name, Ethnicity.BLACK);
     }
 
 }
